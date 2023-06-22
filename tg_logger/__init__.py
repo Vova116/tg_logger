@@ -21,7 +21,7 @@ def setup(base_logger: logging.Logger = logging.getLogger(),
     :param timeout: seconds for retrying to send log if error occupied
     :param tg_format: logging format for tg messages (html parse mode)
 
-    :return: logging.StreamHandler
+    :return: None
     """
     # Logging format
     formatter = logging.Formatter(tg_format)
@@ -34,5 +34,3 @@ def setup(base_logger: logging.Logger = logging.getLogger(),
     )
     tg_handler.setFormatter(formatter)
     base_logger.addHandler(tg_handler)
-
-    return tg_handler
